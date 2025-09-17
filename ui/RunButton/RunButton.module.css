@@ -1,0 +1,20 @@
+.runButton__content {
+    position: relative;
+    left: 3px;
+    width: 16px;
+    height: 20px;
+    background-color: #FFF;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transition: 0.3s ease;
+}
+
+.runButton__content.active {
+    width: 16px;
+    height: 16px;
+    clip-path: none;
+    left: 2px;
+}
+
+button:hover .runButton__content {
+    background-color: #01A2FF;
+}
