@@ -7,17 +7,18 @@ import executor from "@/lib/api/executor";
 import {StateContext, DispatchContext} from "@/components/CodeEditor/contexts";
 
 
-export default function codeFieldHeader () {
+export default function CodeFieldHeader () {
     const state= useContext(StateContext);
     const dispatch = useContext(DispatchContext);
 
     const runCode = async () => {
         const output = await executor(state?.language ?? '', state?.codeContent ?? '')
-        console.log(output);
-        dispatch && dispatch({
-            type: 'setOutputContent',
-            outputContent: output
-        })
+        if (dispatch) {
+            dispatch({
+                type: 'setOutputContent',
+                outputContent: output
+            })
+        }
     }
 
     return (

@@ -16,7 +16,7 @@ export default function CodeField() {
     const onChange = useCallback((value: string) => dispatch && dispatch({
         type: 'setCodeContent',
         codeContent: value
-    }), []);
+    }), [dispatch]);
 
     return (
         <ContentField fieldLabel={'Code'} width={'400px'} height={'500px'}>
